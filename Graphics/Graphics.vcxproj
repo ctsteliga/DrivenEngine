@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>18.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{ad3b915e-0329-4524-8243-aa438f3d7b74}</ProjectGuid>
-    <RootNamespace>DrivenEngine</RootNamespace>
+    <ProjectGuid>{e4a2a402-d179-45c1-9e71-7da86828fb17}</ProjectGuid>
+    <RootNamespace>Graphics</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,13 +40,13 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v145</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
@@ -102,16 +102,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(ProjectDir)IMGUI\;$(ProjectDir)IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)..\..\GLFW\lib-vc2022\;$(SolutionDir)..\..\Vulkan\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Utilities.lib;DrivenEngineCore.lib;Graphics.lib;glfw3_mt.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -120,33 +118,42 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(ProjectDir)IMGUI\;$(ProjectDir)IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;$(SolutionDir)..\..\GLFW\lib-vc2022\;$(SolutionDir)..\..\Vulkan\Lib\;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>Utilities.lib;DrivenEngineCore.lib;Graphics.lib;glfw3_mt.lib;vulkan-1.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ApplicationManager.cpp" />
-    <ClCompile Include="Program.cpp" />
+    <ClInclude Include="GraphicsManager.h" />
+    <ClInclude Include="GraphicsWrapper_Vulkan_GLFW.h" />
+    <ClInclude Include="IGraphicsWrapper.h" />
+    <ClInclude Include="IMGUI\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="IMGUI\backends\imgui_impl_vulkan.h" />
+    <ClInclude Include="IMGUI\imconfig.h" />
+    <ClInclude Include="IMGUI\imgui.h" />
+    <ClInclude Include="IMGUI\imgui_internal.h" />
+    <ClInclude Include="IMGUI\imstb_rectpack.h" />
+    <ClInclude Include="IMGUI\imstb_textedit.h" />
+    <ClInclude Include="IMGUI\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ApplicationManager.h" />
+    <ClCompile Include="GraphicsManager.cpp" />
+    <ClCompile Include="GraphicsWrapper_Vulkan_GLFW.cpp" />
+    <ClCompile Include="IMGUI\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="IMGUI\backends\imgui_impl_vulkan.cpp" />
+    <ClCompile Include="IMGUI\imgui.cpp" />
+    <ClCompile Include="IMGUI\imgui_demo.cpp" />
+    <ClCompile Include="IMGUI\imgui_draw.cpp" />
+    <ClCompile Include="IMGUI\imgui_tables.cpp" />
+    <ClCompile Include="IMGUI\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="DrivenEngineCore\DrivenEngineCore.vcxproj">
-      <Project>{ec41002d-f665-4c45-87c3-0d4d0b1fafa3}</Project>
-    </ProjectReference>
-    <ProjectReference Include="Graphics\Graphics.vcxproj">
-      <Project>{e4a2a402-d179-45c1-9e71-7da86828fb17}</Project>
-    </ProjectReference>
-    <ProjectReference Include="Utilities\Utilities.vcxproj">
+    <ProjectReference Include="..\Utilities\Utilities.vcxproj">
       <Project>{033d1bd6-4999-420d-9677-1c0a16eb2f69}</Project>
     </ProjectReference>
   </ItemGroup>
