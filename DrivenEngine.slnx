@@ -1,0 +1,12 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="../DrivenEngineCore/DrivenEngineCore.vcxproj" Id="ec41002d-f665-4c45-87c3-0d4d0b1fafa3">
+    <BuildDependency Project="../Utilities/Utilities.vcxproj" />
+  </Project>
+  <Project Path="../Graphics/Graphics.vcxproj" Id="e4a2a402-d179-45c1-9e71-7da86828fb17" />
+  <Project Path="../Utilities/Utilities.vcxproj" Id="033d1bd6-4999-420d-9677-1c0a16eb2f69" />
+  <Project Path="DrivenEngine.vcxproj" Id="ad3b915e-0329-4524-8243-aa438f3d7b74" />
+</Solution>
