@@ -129,7 +129,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="GraphicsManager.h" />
     <ClInclude Include="GraphicsWrapper_Vulkan_GLFW.h" />
     <ClInclude Include="IGraphicsWrapper.h" />
     <ClInclude Include="IMGUI\backends\imgui_impl_glfw.h" />
@@ -142,7 +141,6 @@
     <ClInclude Include="IMGUI\imstb_truetype.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GraphicsManager.cpp" />
     <ClCompile Include="GraphicsWrapper_Vulkan_GLFW.cpp" />
     <ClCompile Include="IMGUI\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="IMGUI\backends\imgui_impl_vulkan.cpp" />

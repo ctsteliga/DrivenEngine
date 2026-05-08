@@ -7,12 +7,7 @@ class CoreEngineManager
 private:
 	static CoreEngineManager* m_Instance;
 	static std::mutex m_Mutex;
-	IGraphicsWrapper* m_GraphicsWrapper;
-
-	//static GraphicsManager* m_GraphicsManager;
-	//InputManager* m_InputManager;
-	//AudioManager* m_AudioManager;
-	//PhysicsManager* m_PhysicsManager;
+	IGraphicsWrapper* m_GraphicsWrapper = nullptr;
 
 protected:
 	CoreEngineManager();
@@ -28,13 +23,5 @@ public:
 	void Initialize();
 	void Startup();
 	void Shutdown();
-
-	// TODO - Remove due to unnessary complexity
-	
-	//void Run();
-	//GraphicsManager* GetGraphicsManager() const;
-	//InputManager* GetInputManager() const;
-	//AudioManager* GetAudioManager() const;
-	//PhysicsManager* GetPhysicsManager() const;
 
 };

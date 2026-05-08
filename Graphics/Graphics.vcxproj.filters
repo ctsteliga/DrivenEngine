@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="GraphicsManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="IMGUI\imconfig.h">
       <Filter>IMGUI</Filter>
     </ClInclude>
@@ -56,9 +53,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GraphicsManager.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="IMGUI\imgui.cpp">
       <Filter>IMGUI</Filter>
     </ClCompile>
