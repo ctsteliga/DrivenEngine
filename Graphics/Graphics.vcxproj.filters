@@ -19,6 +19,9 @@
     <Filter Include="IMGUI\backends">
       <UniqueIdentifier>{db8e2584-25f2-4c3c-bd5c-6564b8318d88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Examples">
+      <UniqueIdentifier>{83257eae-005e-4095-b9af-7905cdee1c0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="IMGUI\imconfig.h">
@@ -51,6 +54,9 @@
     <ClInclude Include="GraphicsWrapper_Vulkan_GLFW.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GW_Vulkan_GLFW_Example.h">
+      <Filter>Examples</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="IMGUI\imgui.cpp">
@@ -76,6 +82,9 @@
     </ClCompile>
     <ClCompile Include="GraphicsWrapper_Vulkan_GLFW.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GW_Vulkan_GLFW_Example.cpp">
+      <Filter>Examples</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,5 +1,6 @@
 #include "CoreEngineManager.h"
 #include "GraphicsWrapper_Vulkan_GLFW.h"
+#include "GW_Vulkan_GLFW_Example.h"
 #include "Debug.h"
 
 CoreEngineManager* CoreEngineManager::m_Instance = nullptr;
@@ -9,7 +10,7 @@ CoreEngineManager::CoreEngineManager()
 {
 	LOGGING("CoreEngineManager Constructor called.")
 	//TODO - Make this dynamic based on config file settings
-	m_GraphicsWrapper = new GraphicsWrapper_Vulkan_GLFW();
+	m_GraphicsWrapper = new GW_Vulkan_GLFW_Example();
 }
 
 CoreEngineManager::~CoreEngineManager()

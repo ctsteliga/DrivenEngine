@@ -130,6 +130,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="GraphicsWrapper_Vulkan_GLFW.h" />
+    <ClInclude Include="GW_Vulkan_GLFW_Example.h" />
     <ClInclude Include="IGraphicsWrapper.h" />
     <ClInclude Include="IMGUI\backends\imgui_impl_glfw.h" />
     <ClInclude Include="IMGUI\backends\imgui_impl_vulkan.h" />
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GraphicsWrapper_Vulkan_GLFW.cpp" />
+    <ClCompile Include="GW_Vulkan_GLFW_Example.cpp" />
     <ClCompile Include="IMGUI\backends\imgui_impl_glfw.cpp" />
     <ClCompile Include="IMGUI\backends\imgui_impl_vulkan.cpp" />
     <ClCompile Include="IMGUI\imgui.cpp" />
