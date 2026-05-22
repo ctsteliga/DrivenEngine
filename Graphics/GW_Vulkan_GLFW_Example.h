@@ -11,5 +11,6 @@ public:
 	GW_Vulkan_GLFW_Example(const GW_Vulkan_GLFW_Example&) = delete;
 	GW_Vulkan_GLFW_Example& operator=(const GW_Vulkan_GLFW_Example&) = delete;
 
+	void Initialize() override {};
 	void Run() override;
 };

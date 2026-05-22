@@ -105,7 +105,7 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\;$(SolutionDir)..\..\GLM\glm\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -123,7 +123,7 @@
       <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
-      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)Utilities\;$(SolutionDir)DrivenEngineCore\;$(SolutionDir)Graphics\;$(SolutionDir)Graphics\IMGUI\;$(SolutionDir)Graphics\IMGUI\backends\;$(SolutionDir)..\..\GLFW\include\;$(SolutionDir)..\..\Vulkan\Include\;$(SolutionDir)..\..\GLM\glm\</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

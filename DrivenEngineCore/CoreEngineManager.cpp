@@ -10,7 +10,7 @@ CoreEngineManager::CoreEngineManager()
 {
 	LOGGING("CoreEngineManager Constructor called.")
 	//TODO - Make this dynamic based on config file settings
-	m_GraphicsWrapper = new GW_Vulkan_GLFW_Example();
+	m_GraphicsWrapper = new GraphicsWrapper_Vulkan_GLFW();
 }
 
 CoreEngineManager::~CoreEngineManager()
@@ -34,6 +34,7 @@ CoreEngineManager* CoreEngineManager::Instance()
 void CoreEngineManager::Initialize()
 {
 	LOGGING("CoreEngineManager Initialize called.")
+	m_GraphicsWrapper->Initialize();
 }
 
 void CoreEngineManager::Startup()
@@ -47,6 +48,7 @@ void CoreEngineManager::Startup()
 void CoreEngineManager::Shutdown()
 {
 	LOGGING("CoreEngineManager Shutdown called.")
+	m_GraphicsWrapper->Shutdown();
 	delete m_GraphicsWrapper;
 	m_GraphicsWrapper = nullptr;
 }

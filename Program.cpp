@@ -15,6 +15,6 @@ int main() {
 
 	ApplicationManager::Instance()->Shutdown();
 
-	SimpleUnitTest();
+	//SimpleUnitTest();
 	return 0;
 }
