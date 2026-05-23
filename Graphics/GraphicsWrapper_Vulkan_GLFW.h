@@ -15,6 +15,9 @@ private:
 	GLFWwindow* m_Window;
 	VkInstance m_Instance;
 
+	// ADD DEBUG MACRO - ?
+	VkDebugUtilsMessengerEXT m_DebugMessenger;
+
 	void InitializeWindow(); 
 	void InitializeVulkan(); 
 	void CreateInstance();
@@ -30,4 +33,10 @@ public:
 	void Initialize() override;
 	void Run() override;
 	void Shutdown() override;
+
+	// Validation Layer
+	void PopulateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
+	void SetupDebugMessenger();
+	static VKAPI_ATTR VkBool32 VKAPI_CALL DebugCallback(VkDebugUtilsMessageSeverityFlagBitsEXT messageSeverity, VkDebugUtilsMessageTypeFlagsEXT messageType, const VkDebugUtilsMessengerCallbackDataEXT* pCallbackData, void* pUserData);
+
 };
