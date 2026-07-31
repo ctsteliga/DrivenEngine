@@ -14,9 +14,13 @@ protected:
 	~CoreEngineManager();
 
 public:
-	// Delete copy constructor and assignment operator to prevent copying
+	// RULE OF 5:
+	// Delete copy constructor, assignment operator, move constructor, 
+	// and move assignment operator to prevent copying and moving
 	CoreEngineManager(const CoreEngineManager&) = delete;
 	CoreEngineManager& operator=(const CoreEngineManager&) = delete;
+	CoreEngineManager(CoreEngineManager&&) = delete;
+	CoreEngineManager& operator=(CoreEngineManager&&) = delete;
 
 	static CoreEngineManager* Instance();
 

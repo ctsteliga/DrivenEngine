@@ -10,14 +10,18 @@ private:
 	static FILE* m_DebugLogFile;
 	static FILE* m_EventLogFile;
 	static FileUtilities* m_Instance;
-	static std::mutex m_Mutex;
+	static std::mutex m_Mutex; 
 protected:
 	FileUtilities();
 	~FileUtilities();
 public:
-	// Delete copy constructor and assignment operator to prevent copying
+	// RULE OF 5:
+	// Delete copy constructor, assignment operator, move constructor,
+	// and move assignment operator to prevent copying and moving
 	FileUtilities(const FileUtilities&) = delete;
 	FileUtilities& operator=(const FileUtilities&) = delete;
+	FileUtilities(FileUtilities&&) = delete;
+	FileUtilities& operator=(FileUtilities&&) = delete;
 
 	static FileUtilities* Instance();
 	void WriteToDebugLog(const std::string& message);
